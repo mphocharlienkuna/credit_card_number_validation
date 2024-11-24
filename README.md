@@ -1,16 +1,10 @@
-# Credit Card Number Validation
+# Credit Card Number Validation 
+<strong>Other Apps</strong>
+  - <p><strong><a href="https://play.google.com/store/apps/details?id=za.co.addcolour.tellabuddy">Tell A Buddy - Counseling Online</a></strong></p>
+  - <p><strong><a href="https://play.google.com/store/apps/details?id=za.co.addcolour.late_night">Late Night (Build using Flutter)</a></strong></p>
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<strong>Videos</strong>
+| **Android** | **IOS** |
+|---|---|
+|<video src="" width="300"/>|<video src="" width="300"/>|
+|  |  |
