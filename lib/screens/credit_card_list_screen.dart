@@ -80,14 +80,16 @@ class _CreditCardListScreenState extends State<CreditCardListScreen> {
       BuildContext context, CreditCard creditCard, BinApi binApi) {
     _showBottomSheet(
       context,
-      SizedBox(
-        height: 290,
-        child: CreditCardDetailBottomSheet(
-          creditCard: creditCard,
-          onEditPressed: () {
-            Navigator.pop(context);
-            _showCardScreenBottomSheet(context, creditCard, binApi);
-          },
+      SingleChildScrollView(
+        child: SizedBox(
+          height: 320,
+          child: CreditCardDetailBottomSheet(
+            creditCard: creditCard,
+            onEditPressed: () {
+              Navigator.pop(context);
+              _showCardScreenBottomSheet(context, creditCard, binApi);
+            },
+          ),
         ),
       ),
       false,

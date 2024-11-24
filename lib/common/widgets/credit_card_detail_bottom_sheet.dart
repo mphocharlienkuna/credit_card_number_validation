@@ -94,11 +94,16 @@ class _CreditCardDetailBottomSheetState
   Widget _buildDetailRow(String label, String value) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 4.0),
-      child: Row(
-        children: [
-          Text(label, style: _detailLabelStyle),
-          Text(value, style: _detailTextStyle),
-        ],
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(label, style: _detailLabelStyle),
+            Text(value, style: _detailTextStyle),
+            // Add more widgets as needed
+          ],
+        ),
       ),
     );
   }

@@ -35,7 +35,7 @@ class _AddCreditCardScreen extends State<AddCreditCardScreen> {
   String cvvCode = '';
   String cardTypeColor = '';
   String cardType = '';
-  String issuingCountry = 'South Africa';
+  String issuingCountry = '';
   bool isCvvFocused = false;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
@@ -232,9 +232,13 @@ class _AddCreditCardScreen extends State<AddCreditCardScreen> {
     final bin = cardNumber.replaceAll(' ', '').substring(0, 6);
     final binResponse = await _fetchBinDetails(bin);
 
+    if (binResponse == null) {
+      return;
+    }
+
     if (_isCountryBanned(binResponse)) {
       setState(() {
-        errorMessage = "The country ${binResponse!.country!.name!} is banned.";
+        errorMessage = "The country is banned.";
       });
       return;
     }
@@ -244,10 +248,13 @@ class _AddCreditCardScreen extends State<AddCreditCardScreen> {
 
   /// Checks if the country associated with the given [binResponse] is banned.
   ///
-  /// Returns `true` if the country is banned, `false` otherwise.
+  /// Returns `true` if the country is banned or null, `false` otherwise.
   bool _isCountryBanned(BinResponse? binResponse) {
-    return binResponse?.country?.name != null &&
-        BannedCountries.isCountryBanned(binResponse!.country!.name!);
+    if (binResponse?.country?.name == null) {
+      return true;
+    } else {
+      return BannedCountries.isCountryBanned(binResponse!.country!.name!);
+    }
   }
 
   /// Called when the credit card model changes.
